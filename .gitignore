@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rprofile
+renv
+Muenster-Google-Maps-Data-Exploration.Rproj
