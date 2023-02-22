@@ -1,0 +1,52 @@
+library(jsonlite)
+library(stringr)
+library(purrr)
+
+getDefinedActivityDataFrame <- function(
+    df,
+    activity,
+    columnsPrefix = 'timelineObjects.activitySegment.'
+){
+  # getting rows where activity
+  df_activity <- df[
+    df$timelineObjects.activitySegment.activityType==activity & 
+      !is.na(df$timelineObjects.activitySegment.activityType),
+  ]
+  
+  # removing columns where all rows are null or na
+  df_activity <- df_activity[
+    colSums(is.na(df_activity) | df_activity=='NULL') != nrow(df_activity)
+  ]
+  
+  # renaming columns by removing prefix
+  colnames(df_activity) <- map(
+    colnames(df_activity),
+    function(col) str_replace(col, columnsPrefix, '')
+  )
+  
+  return(df_activity)
+}
+
+# reading simple subsample json
+df <- as.data.frame(
+  fromJSON(
+    txt = 'dataset/raw/simple_subsample.json',
+    flatten = TRUE
+  )
+)
+
+# getting only cycling samples and its columns
+df_cycling <- getDefinedActivityDataFrame(df, 'CYCLING')
+
+# getting only walking samples and its columns
+df_walking <- getDefinedActivityDataFrame(df, 'WALKING')
+
+# getting only in_train samples and its columns
+df_train <- getDefinedActivityDataFrame(df, 'IN_TRAIN')
+
+# getting only in_bus samples and its columns
+df_bus <- getDefinedActivityDataFrame(df, 'IN_BUS')
+
+colnames(df_bus)
+
+

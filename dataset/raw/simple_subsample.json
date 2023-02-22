@@ -1,0 +1,1119 @@
+{
+  "timelineObjects": [{
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 519501002,
+        "longitudeE7": 76759589,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 519512069,
+        "longitudeE7": 76700856,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T12:04:21.057Z",
+        "endTimestamp": "2022-06-01T12:06:07.530Z"
+      },
+      "distance": 420,
+      "activityType": "CYCLING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "CYCLING",
+        "probability": 87.86128759384155
+      }, {
+        "activityType": "WALKING",
+        "probability": 8.648402243852615
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 2.12350245565176
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.577589264139533
+      }, {
+        "activityType": "STILL",
+        "probability": 0.4912307020276785
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.17855712212622166
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.07433114224113524
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.016714884259272367
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.01143956178566441
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.00693729380145669
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.003942236435250379
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.00391034918720834
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0021203424694249406
+      }, {
+        "activityType": "FLYING",
+        "probability": 3.40345678750964E-5
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 7.8114606796853E-10
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 519500770,
+          "lngE7": 76760172
+        }, {
+          "latE7": 519512252,
+          "lngE7": 76700415
+        }, {
+          "latE7": 519512100,
+          "lngE7": 76700892
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJwZ-_O0-7uUcRnqxY-tmhVrM",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJteACO0-7uUcRVHcbv7zheYA",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJPb2GM0-7uUcRg54MUZRfhKc",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJq3eiuEi7uUcR-ZIUSdjYppw",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ7T6clUi7uUcRNzjTdZ4w73s",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJc8YqkEi7uUcRW6SvtghVweU",
+          "duration": "13s"
+        }, {
+          "placeId": "ChIJQcY6ZUi7uUcR3IoE-HuRLUs",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJQcY6ZUi7uUcRDpk1wBCeT8Q",
+          "duration": "5s"
+        }, {
+          "placeId": "ChIJVb3nbEi7uUcRp36NDVq2wAQ",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJKT6kbEi7uUcRk3vVD3Z4PvQ",
+          "duration": "0s"
+        }, {
+          "placeId": "ChIJASuGaEi7uUcRT005QWFrO9o",
+          "duration": "50s"
+        }],
+        "distanceMeters": 513.7651896658977,
+        "travelMode": "BICYCLE",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 519510691,
+        "longitudeE7": 76683295,
+        "placeId": "ChIJT9Xe4Te7uUcRy_XnwalZ2_I",
+        "address": "Wolbecker Str. 286, 48155 Münster, Deutschland",
+        "name": "EDEKA Nientied",
+        "sourceInfo": {
+          "deviceTag": -522202502
+        },
+        "locationConfidence": 94.840775,
+        "calibratedProbability": 84.58401
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T12:06:07.530Z",
+        "endTimestamp": "2022-06-01T12:20:47.125Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 519511912,
+      "centerLngE7": 76690125,
+      "visitConfidence": 93,
+      "otherCandidateLocations": [{
+        "latitudeE7": 519510033,
+        "longitudeE7": 76693037,
+        "placeId": "ChIJlbo2FEi7uUcRR4L3_EzbGRU",
+        "address": "Wolbecker Str. 290-296, 48155 Münster, Deutschland",
+        "name": "Edeka Nientied beverage market",
+        "locationConfidence": 1.2733035,
+        "calibratedProbability": 1.1355993
+      }, {
+        "latitudeE7": 519513109,
+        "longitudeE7": 76684712,
+        "placeId": "ChIJK6wxWaW7uUcRaj3aUO5CKTA",
+        "address": "Wolbecker Str. 284, 48155 Münster, Deutschland",
+        "name": "Stadt Münster - Personal- und Organisationsamt",
+        "locationConfidence": 0.7880209,
+        "calibratedProbability": 0.70279866
+      }, {
+        "latitudeE7": 519513889,
+        "longitudeE7": 76708333,
+        "placeId": "ChIJUYfHb0i7uUcRJYHdJqQ_p_U",
+        "address": "Laerer Landweg 189, 48155 Münster, Deutschland",
+        "name": "Imbiss am Turm",
+        "locationConfidence": 0.7300553,
+        "calibratedProbability": 0.6511018
+      }, {
+        "latitudeE7": 519514871,
+        "longitudeE7": 76697286,
+        "placeId": "ChIJv3RKEki7uUcRxQmnfa111KA",
+        "address": "48155 Münster, Deutschland",
+        "name": "St.-Margareta-Kirche",
+        "locationConfidence": 0.45098108,
+        "calibratedProbability": 0.40220872
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 81,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 519513424,
+        "longitudeE7": 76693678,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 519503675,
+        "longitudeE7": 76776376,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T12:20:47.125Z",
+        "endTimestamp": "2022-06-01T12:25:03.072Z"
+      },
+      "distance": 631,
+      "activityType": "CYCLING",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "CYCLING",
+        "probability": 85.52354574203491
+      }, {
+        "activityType": "WALKING",
+        "probability": 11.606699228286743
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 1.4327328652143478
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.5190023221075535
+      }, {
+        "activityType": "STILL",
+        "probability": 0.47919098287820816
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.22495165467262268
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.11527189053595066
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.04441975033842027
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.027375048375688493
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.010670980555005372
+      }, {
+        "activityType": "SKIING",
+        "probability": 0.009521239553578198
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.0041633702494436875
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.002428855987091083
+      }, {
+        "activityType": "FLYING",
+        "probability": 2.5837684347607137E-5
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 2.0506399356357008E-8
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 519512825,
+          "lngE7": 76693410
+        }, {
+          "latE7": 519499549,
+          "lngE7": 76759324
+        }, {
+          "latE7": 519504966,
+          "lngE7": 76777200
+        }],
+        "source": "INFERRED",
+        "roadSegment": [{
+          "placeId": "ChIJcfeqa0i7uUcR2tlVPKsTZ8c",
+          "duration": "44s"
+        }, {
+          "placeId": "ChIJfU7MX0i7uUcRpA-NI9rcNfA",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJjwDeX0i7uUcR-bmItRU_RNM",
+          "duration": "3s"
+        }, {
+          "placeId": "ChIJ1To99Ui7uUcRVV6hmrVFDJo",
+          "duration": "6s"
+        }, {
+          "placeId": "ChIJjzKe7ki7uUcRc_ogKGhv87o",
+          "duration": "36s"
+        }, {
+          "placeId": "ChIJmdssxUi7uUcRmnmds8dI4BY",
+          "duration": "14s"
+        }, {
+          "placeId": "ChIJtUCzLE-7uUcRiFLbfi0YgdU",
+          "duration": "27s"
+        }, {
+          "placeId": "ChIJWaOTKE-7uUcR5zEnjJBmwUc",
+          "duration": "1s"
+        }, {
+          "placeId": "ChIJWaOTKE-7uUcRO4-64gTm0hQ",
+          "duration": "4s"
+        }, {
+          "placeId": "ChIJp22rKE-7uUcRKJn_rQZTOJg",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJ0folJU-7uUcRvcTpFQUMAAM",
+          "duration": "24s"
+        }, {
+          "placeId": "ChIJteACO0-7uUcRUiYG5F25bV0",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJwZ-_O0-7uUcRn6xY-tmhVrM",
+          "duration": "9s"
+        }, {
+          "placeId": "ChIJ4b4jFk-7uUcRCpfzbVuP2jc",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJAYb4Ek-7uUcRGJfc6n5Ipnk",
+          "duration": "20s"
+        }, {
+          "placeId": "ChIJ9bbxck-7uUcR0u6DaPy2-ns",
+          "duration": "3s"
+        }],
+        "distanceMeters": 745.4100557428862,
+        "travelMode": "BICYCLE",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 519500935,
+        "longitudeE7": 76779886,
+        "placeId": "ChIJGy5ODU-7uUcRvMIV_ZMmB-0",
+        "address": "Rosengarten 22, 48155 Münster, Deutschland",
+        "sourceInfo": {
+          "deviceTag": -522202502
+        },
+        "locationConfidence": 94.558815,
+        "calibratedProbability": 68.8292
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T12:25:03.072Z",
+        "endTimestamp": "2022-06-01T12:42:41.752Z"
+      },
+      "placeConfidence": "HIGH_CONFIDENCE",
+      "centerLatE7": 519502962,
+      "centerLngE7": 76773519,
+      "visitConfidence": 70,
+      "otherCandidateLocations": [{
+        "latitudeE7": 519492256,
+        "longitudeE7": 76761310,
+        "placeId": "ChIJsbFgIE-7uUcRZk1x23Xov9Q",
+        "address": "48155 Münster, Deutschland",
+        "name": "Münster Mondstraße",
+        "locationConfidence": 0.46076858,
+        "calibratedProbability": 0.33539268
+      }, {
+        "latitudeE7": 519498060,
+        "longitudeE7": 76757750,
+        "placeId": "ChIJLdGSJE-7uUcRYFe98707Odg",
+        "address": "48155 Münster, Deutschland",
+        "name": "Mondstr. B",
+        "locationConfidence": 0.43788397,
+        "calibratedProbability": 0.318735
+      }, {
+        "latitudeE7": 519502586,
+        "longitudeE7": 76786367,
+        "placeId": "ChIJ2aXDoU-7uUcRKqp2sqQaR2E",
+        "address": "Rosengarten 20, 48155 Münster, Deutschland",
+        "name": "Vereinsheim Gartenanlage Rosengarten Kleingartenanlage Münster",
+        "locationConfidence": 0.3151875,
+        "calibratedProbability": 0.22942446
+      }, {
+        "latitudeE7": 519505205,
+        "longitudeE7": 76754582,
+        "placeId": "ChIJBULWNk-7uUcRvcjFiiT7wCM",
+        "address": "Peter-Rosegger-Weg 57, 48155 Münster, Deutschland",
+        "name": "Katholischer Kindergarten St. Margareta",
+        "locationConfidence": 0.2842669,
+        "calibratedProbability": 0.20691739
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "locationConfidence": 81,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "MAIN"
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 519499755,
+        "longitudeE7": 76760186,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 519495450,
+        "longitudeE7": 76098955,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T12:42:41.752Z",
+        "endTimestamp": "2022-06-01T13:15:41.915Z"
+      },
+      "distance": 5728,
+      "activityType": "IN_BUS",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "IN_BUS",
+        "probability": 70.20525336265564
+      }, {
+        "activityType": "WALKING",
+        "probability": 13.197942078113556
+      }, {
+        "activityType": "STILL",
+        "probability": 10.98446398973465
+      }, {
+        "activityType": "CYCLING",
+        "probability": 1.9849317148327827
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 1.4469671063125134
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.810873880982399
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.6601215805858374
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.3942424897104502
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.29575792141258717
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.01491367002017796
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.003376684253453277
+      }, {
+        "activityType": "FLYING",
+        "probability": 8.677267942402977E-4
+      }, {
+        "activityType": "SKIING",
+        "probability": 1.7282192175116506E-4
+      }, {
+        "activityType": "SAILING",
+        "probability": 1.0356263828725787E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.3945752641575382E-5
+      }],
+      "transitPath": {
+        "transitStops": [{
+          "latitudeE7": 519497500,
+          "longitudeE7": 76747880,
+          "placeId": "ChIJtZvZLE-7uUcR5R7b-VnXF7w",
+          "address": "48155 Münster, Deutschland",
+          "name": "Mondstr. A"
+        }, {
+          "latitudeE7": 519514871,
+          "longitudeE7": 76697286,
+          "placeId": "ChIJv3RKEki7uUcRxQmnfa111KA",
+          "address": "48155 Münster, Deutschland",
+          "name": "St.-Margareta-Kirche"
+        }, {
+          "latitudeE7": 519522500,
+          "longitudeE7": 76653610,
+          "placeId": "ChIJezdlgTe7uUcRtK7-tAwKLLM",
+          "address": "48155 Münster, Deutschland",
+          "name": "Münster, Mühlhäuser Str."
+        }, {
+          "latitudeE7": 519540520,
+          "longitudeE7": 76601580,
+          "placeId": "ChIJ8bRSajq7uUcRCQJZlEZHkfw",
+          "address": "48155 Münster, Deutschland",
+          "name": "Institut der Feuerwehr"
+        }, {
+          "latitudeE7": 519549120,
+          "longitudeE7": 76520870,
+          "placeId": "ChIJH259CiW7uUcR5ozAXdFeNLc",
+          "address": "48155 Münster, Deutschland",
+          "name": "Liboristr."
+        }, {
+          "latitudeE7": 519553320,
+          "longitudeE7": 76471140,
+          "placeId": "ChIJgWA-aia7uUcRFpFhO7sdYrE",
+          "address": "48145 Münster, Deutschland",
+          "name": "Hansa-Berufskolleg A"
+        }, {
+          "latitudeE7": 519560010,
+          "longitudeE7": 76443300,
+          "placeId": "ChIJW-bnpCe7uUcRV565q-Ikdg4",
+          "address": "48145 Münster, Deutschland",
+          "name": "Münster Sophienstraße"
+        }, {
+          "latitudeE7": 519576963,
+          "longitudeE7": 76402204,
+          "placeId": "ChIJ3Snz79i6uUcRUyv4jtur0BI",
+          "address": "48145 Münster, Deutschland",
+          "name": "Münster Sternstraße"
+        }, {
+          "latitudeE7": 519589460,
+          "longitudeE7": 76371800,
+          "placeId": "ChIJxUBMRtm6uUcRId_pA1mKioA",
+          "address": "48155 Münster, Deutschland",
+          "name": "Bremer Platz"
+        }, {
+          "latitudeE7": 519592240,
+          "longitudeE7": 76347815,
+          "placeId": "ChIJJaAF7tu6uUcR_J-4KzfGJZc",
+          "address": "48143 Münster, Deutschland",
+          "name": "Servatiiplatz B"
+        }, {
+          "latitudeE7": 519565690,
+          "longitudeE7": 76336200,
+          "placeId": "ChIJ7acaONq6uUcRM8Uro8OyeLI",
+          "address": "48143 Münster, Deutschland",
+          "name": "Hauptbahnhof C1"
+        }],
+        "name": "11",
+        "hexRgbColor": "EF7D00",
+        "linePlaceId": "ChIJxeDv5sC6uUcRsKfNzLGDu-U",
+        "stopTimesInfo": [{
+          "scheduledDepartureTimestamp": "2022-06-01T12:46:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:47:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:47:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:48:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:48:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:49:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:49:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:51:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:51:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:52:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:52:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:53:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:53:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:54:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:54:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:56:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:56:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T12:58:00Z",
+          "scheduledDepartureTimestamp": "2022-06-01T12:58:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-06-01T13:00:00Z"
+        }],
+        "source": "INFERRED",
+        "confidence": 0.993935029059641,
+        "distanceMeters": 3391.0
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 519499755,
+          "lngE7": 76760186,
+          "accuracyMeters": 15,
+          "timestamp": "2022-06-01T12:42:41.752Z"
+        }, {
+          "latE7": 519495925,
+          "lngE7": 76748751,
+          "accuracyMeters": 35,
+          "timestamp": "2022-06-01T12:44:01.445Z"
+        }, {
+          "latE7": 519527725,
+          "lngE7": 76654573,
+          "accuracyMeters": 58,
+          "timestamp": "2022-06-01T12:48:20.758Z"
+        }, {
+          "latE7": 519534981,
+          "lngE7": 76618048,
+          "accuracyMeters": 59,
+          "timestamp": "2022-06-01T12:49:34.148Z"
+        }, {
+          "latE7": 519541742,
+          "lngE7": 76605372,
+          "accuracyMeters": 22,
+          "timestamp": "2022-06-01T12:50:17.433Z"
+        }, {
+          "latE7": 519552587,
+          "lngE7": 76555797,
+          "accuracyMeters": 50,
+          "timestamp": "2022-06-01T12:51:40.030Z"
+        }, {
+          "latE7": 519547624,
+          "lngE7": 76528203,
+          "accuracyMeters": 25,
+          "timestamp": "2022-06-01T12:52:12.037Z"
+        }, {
+          "latE7": 519556788,
+          "lngE7": 76451563,
+          "accuracyMeters": 4,
+          "timestamp": "2022-06-01T12:54:45Z"
+        }, {
+          "latE7": 519590170,
+          "lngE7": 76371200,
+          "accuracyMeters": 13,
+          "timestamp": "2022-06-01T12:57:42.658Z"
+        }, {
+          "latE7": 519591836,
+          "lngE7": 76350491,
+          "accuracyMeters": 30,
+          "timestamp": "2022-06-01T13:00:12.629Z"
+        }, {
+          "latE7": 519570976,
+          "lngE7": 76343419,
+          "accuracyMeters": 36,
+          "timestamp": "2022-06-01T13:01:10.254Z"
+        }, {
+          "latE7": 519564034,
+          "lngE7": 76332555,
+          "accuracyMeters": 11,
+          "timestamp": "2022-06-01T13:02:13.222Z"
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 3572.136537364668
+      }
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 519495450,
+        "longitudeE7": 76098955,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 519527029,
+        "longitudeE7": 76098851,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-06-01T13:15:41.915Z",
+        "endTimestamp": "2022-06-01T13:19:48.106Z"
+      },
+      "distance": 396,
+      "activityType": "WALKING",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 74.56157207489014
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 22.750642895698547
+      }, {
+        "activityType": "STILL",
+        "probability": 1.3090047053992748
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 0.8118803612887859
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.20716730505228043
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 0.11805006070062518
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.10427627712488174
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.06327508017420769
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.0507598218973726
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.022313387307804078
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 5.242533916316461E-4
+      }, {
+        "activityType": "FLYING",
+        "probability": 4.740017175208777E-4
+      }, {
+        "activityType": "SKIING",
+        "probability": 4.7030135874592816E-5
+      }, {
+        "activityType": "SAILING",
+        "probability": 1.5250441265379777E-5
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 7.227301423995414E-7
+      }],
+      "waypointPath": {
+        "waypoints": [{
+          "latE7": 519495353,
+          "lngE7": 76098542
+        }, {
+          "latE7": 519521293,
+          "lngE7": 76088604
+        }, {
+          "latE7": 519527473,
+          "lngE7": 76098213
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 431.5719699600964,
+        "travelMode": "WALK",
+        "confidence": 1.0
+      }
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 510404175,
+        "longitudeE7": 137321108,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 513458750,
+        "longitudeE7": 123828827,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-08-02T06:06:10.192Z",
+        "endTimestamp": "2022-08-02T07:54:05.456Z"
+      },
+      "distance": 107089,
+      "activityType": "IN_TRAIN",
+      "confidence": "HIGH",
+      "activities": [{
+        "activityType": "IN_TRAIN",
+        "probability": 98.25198650360107
+      }, {
+        "activityType": "WALKING",
+        "probability": 0.8384340442717075
+      }, {
+        "activityType": "STILL",
+        "probability": 0.2989737316966057
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.22263729479163885
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 0.20205355249345303
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.08399570942856371
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.051063246792182326
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.022991107834968716
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.014089394244365394
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.007234975782921538
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.0038514815969392657
+      }, {
+        "activityType": "SAILING",
+        "probability": 0.0018417189494357444
+      }, {
+        "activityType": "RUNNING",
+        "probability": 8.519778930349275E-4
+      }, {
+        "activityType": "SKIING",
+        "probability": 5.653070189737264E-6
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.0743170242299982E-8
+      }],
+      "transitPath": {
+        "transitStops": [{
+          "latitudeE7": 510405029,
+          "longitudeE7": 137314191,
+          "placeId": "ChIJHQaglIrFCUcRKf1lbzKbJ0k",
+          "address": "Wiener Platz 4, 01069 Dresden, Deutschland",
+          "name": "Dresden Central Station"
+        }, {
+          "latitudeE7": 510567599,
+          "longitudeE7": 137253504,
+          "placeId": "ChIJfYgPV3DPCUcR4Z37UQ0f6JU",
+          "address": "Große Meißner Str. 15, 01097 Dresden, Deutschland",
+          "name": "Dresden Mitte"
+        }, {
+          "latitudeE7": 510655758,
+          "longitudeE7": 137410280,
+          "placeId": "ChIJrxXdehTPCUcReIXbLowyykQ",
+          "address": "01097 Dresden, Deutschland",
+          "name": "Dresden-Neustadt"
+        }, {
+          "latitudeE7": 511230615,
+          "longitudeE7": 135796804,
+          "placeId": "ChIJCb1EuTfRCUcRDmJiN4N65HE",
+          "address": "01640 Coswig, Deutschland",
+          "name": "Coswig(b Dresden)"
+        }, {
+          "latitudeE7": 511588809,
+          "longitudeE7": 135615027,
+          "placeId": "ChIJRTG3WhfUCUcRupHEi6J376U",
+          "address": "01689 Weinböhla, Deutschland",
+          "name": "Weinböhla Hp"
+        }, {
+          "latitudeE7": 511765412,
+          "longitudeE7": 135608183,
+          "placeId": "ChIJr7pyT0LUCUcRq0mXd52ONQ0",
+          "address": "01689 Niederau, Deutschland",
+          "name": "Niederau"
+        }, {
+          "latitudeE7": 512507871,
+          "longitudeE7": 135082591,
+          "placeId": "ChIJX_EMbQiAp0cRXflwXvH1z8Q",
+          "address": "01561 Priestewitz, Deutschland",
+          "name": "Priestewitz station"
+        }, {
+          "latitudeE7": 513027929,
+          "longitudeE7": 133914805,
+          "placeId": "ChIJg9bJD8mDp0cROMt0qgVwfV4",
+          "address": "01612 Nünchritz, Deutschland",
+          "name": "Nünchritz"
+        }, {
+          "latitudeE7": 513175989,
+          "longitudeE7": 133658378,
+          "placeId": "ChIJ1aRY9aCDp0cRB5WqCkQBH6k",
+          "address": "01612 Glaubitz, Deutschland",
+          "name": "Glaubitz(Riesa)"
+        }, {
+          "latitudeE7": 513093402,
+          "longitudeE7": 132878087,
+          "placeId": "ChIJG2jKmdecp0cRu6jt17ppDio",
+          "address": "01587 Riesa, Deutschland",
+          "name": "Riesa"
+        }, {
+          "latitudeE7": 513117400,
+          "longitudeE7": 131040550,
+          "placeId": "ChIJM3Hmkbmfp0cRiI5RJ9uZDn0",
+          "address": "04758 Oschatz, Deutschland",
+          "name": "Oschatz"
+        }, {
+          "latitudeE7": 513510424,
+          "longitudeE7": 129842619,
+          "placeId": "ChIJ0VIpkiShp0cRt6x7kp-N1tE",
+          "address": "04774 Dahlen, Deutschland",
+          "name": "Dahlen (Sachs)"
+        }, {
+          "latitudeE7": 513493364,
+          "longitudeE7": 128332808,
+          "placeId": "ChIJzXHOY3qop0cRhT1Yvp6o3RA",
+          "address": "04808 Wurzen, Deutschland",
+          "name": "Kühren"
+        }, {
+          "latitudeE7": 513642793,
+          "longitudeE7": 127388195,
+          "placeId": "ChIJS7YFTYGpp0cRw05XRKoM4-g",
+          "address": "04808 Wurzen, Deutschland",
+          "name": "Wurzen railway station"
+        }, {
+          "latitudeE7": 513456189,
+          "longitudeE7": 125410656,
+          "placeId": "ChIJ891Zin7_pkcRdFx_3Li6uXU",
+          "address": "04451 Borsdorf, Deutschland",
+          "name": "Borsdorf(Sachs)"
+        }, {
+          "latitudeE7": 513439878,
+          "longitudeE7": 124785277,
+          "placeId": "ChIJRdhlw7H4pkcRekkIW-Q7dzU",
+          "address": "04319 Leipzig, Deutschland",
+          "name": "Leipzig-Engelsdorf"
+        }, {
+          "latitudeE7": 513457941,
+          "longitudeE7": 123823143,
+          "placeId": "ChIJyyOngSL4pkcRx82_1XDQAZY",
+          "address": "Willy-Brandt-Platz 5, 04109 Leipzig, Deutschland",
+          "name": "Leipzig Main"
+        }],
+        "name": "RE50",
+        "hexRgbColor": "000000",
+        "linePlaceId": "ChIJGedXb3GrqUcRvL3B7hpTV9w",
+        "stopTimesInfo": [{
+          "scheduledDepartureTimestamp": "2022-08-02T06:06:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:09:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:10:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:12:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:13:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:23:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:29:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:32:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:32:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:34:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:35:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:41:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:42:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:49:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:50:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:52:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T06:52:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T06:58:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:06:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:13:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:14:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:19:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:20:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:25:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:26:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:30:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:31:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:39:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:40:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:43:00Z",
+          "scheduledDepartureTimestamp": "2022-08-02T07:44:00Z"
+        }, {
+          "scheduleArrivalTimestamp": "2022-08-02T07:50:00Z"
+        }],
+        "source": "INFERRED",
+        "confidence": 0.9714974293958417,
+        "distanceMeters": 119438.0
+      },
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 510404175,
+          "lngE7": 137321108,
+          "accuracyMeters": 124,
+          "timestamp": "2022-08-02T06:06:10.192Z"
+        }, {
+          "latE7": 510433383,
+          "lngE7": 137258294,
+          "accuracyMeters": 142,
+          "timestamp": "2022-08-02T06:08:12.223Z"
+        }, {
+          "latE7": 512499543,
+          "lngE7": 135107228,
+          "accuracyMeters": 89,
+          "timestamp": "2022-08-02T06:44:18Z"
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 107209.4789832906
+      }
+    }
+  }, {
+    "activitySegment": {
+      "startLocation": {
+        "latitudeE7": 513458750,
+        "longitudeE7": 123828827,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "endLocation": {
+        "latitudeE7": 513456778,
+        "longitudeE7": 123804215,
+        "sourceInfo": {
+          "deviceTag": -522202502
+        }
+      },
+      "duration": {
+        "startTimestamp": "2022-08-02T07:54:05.456Z",
+        "endTimestamp": "2022-08-02T07:58:57.142Z"
+      },
+      "distance": 257,
+      "activityType": "WALKING",
+      "confidence": "MEDIUM",
+      "activities": [{
+        "activityType": "WALKING",
+        "probability": 71.89589738845825
+      }, {
+        "activityType": "IN_TRAIN",
+        "probability": 14.990203082561493
+      }, {
+        "activityType": "STILL",
+        "probability": 11.780661344528198
+      }, {
+        "activityType": "IN_SUBWAY",
+        "probability": 0.5964027717709541
+      }, {
+        "activityType": "IN_BUS",
+        "probability": 0.26956861838698387
+      }, {
+        "activityType": "IN_PASSENGER_VEHICLE",
+        "probability": 0.18137264996767044
+      }, {
+        "activityType": "CYCLING",
+        "probability": 0.1666821539402008
+      }, {
+        "activityType": "RUNNING",
+        "probability": 0.054616970010101795
+      }, {
+        "activityType": "MOTORCYCLING",
+        "probability": 0.03121943154837936
+      }, {
+        "activityType": "IN_TRAM",
+        "probability": 0.021876144455745816
+      }, {
+        "activityType": "IN_FERRY",
+        "probability": 0.009139695612248033
+      }, {
+        "activityType": "FLYING",
+        "probability": 0.001773226358636748
+      }, {
+        "activityType": "SKIING",
+        "probability": 3.224064585083397E-4
+      }, {
+        "activityType": "SAILING",
+        "probability": 2.645864242367679E-4
+      }, {
+        "activityType": "IN_VEHICLE",
+        "probability": 1.2312731390018428E-8
+      }],
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 513465536,
+          "lngE7": 123821457,
+          "accuracyMeters": 82,
+          "timestamp": "2022-08-02T07:56:14.259Z"
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 256.6436932696709
+      }
+    }
+  }, {
+    "placeVisit": {
+      "location": {
+        "latitudeE7": 513457941,
+        "longitudeE7": 123823143,
+        "placeId": "ChIJyyOngSL4pkcRx82_1XDQAZY",
+        "address": "Willy-Brandt-Platz 5, 04109 Leipzig, Deutschland",
+        "name": "Leipzig Main",
+        "sourceInfo": {
+          "deviceTag": -522202502
+        },
+        "locationConfidence": 89.54147,
+        "calibratedProbability": 77.108986
+      },
+      "duration": {
+        "startTimestamp": "2022-08-02T07:58:57.142Z",
+        "endTimestamp": "2022-08-02T08:05:06.168Z"
+      },
+      "placeConfidence": "MEDIUM_CONFIDENCE",
+      "centerLatE7": 513451860,
+      "centerLngE7": 123802040,
+      "visitConfidence": 93,
+      "otherCandidateLocations": [{
+        "latitudeE7": 513438583,
+        "longitudeE7": 123826259,
+        "placeId": "ChIJIZsSeCL4pkcRoReq9fgBOKc",
+        "address": "Willy-Brandt-Platz 7, 04109 Leipzig, Deutschland",
+        "name": "Promenaden Hauptbahnhof Leipzig",
+        "locationConfidence": 4.4429226,
+        "calibratedProbability": 3.82604
+      }, {
+        "latitudeE7": 513457941,
+        "longitudeE7": 123823143,
+        "placeId": "ChIJ__LteRj4pkcRPr0XBaoQzM4",
+        "address": "Leipzig Hauptbahnhof, Willy-Brandt-Platz, 04109 Leipzig, Deutschland",
+        "name": "Leipzig Hauptbahnhof",
+        "locationConfidence": 2.2801821,
+        "calibratedProbability": 1.9635876
+      }, {
+        "latitudeE7": 513459056,
+        "longitudeE7": 123822379,
+        "placeId": "ChIJRYjNSxj4pkcRRA-rOnMwQFE",
+        "address": "04103 Leipzig, Deutschland",
+        "name": "Leipzig Central Station",
+        "locationConfidence": 1.3621575,
+        "calibratedProbability": 1.1730272
+      }, {
+        "latitudeE7": 513439510,
+        "longitudeE7": 123803300,
+        "placeId": "ChIJsRXqfCL4pkcRyjK83zyQEOw",
+        "address": "04109 Leipzig, Deutschland",
+        "name": "Hauptbahnhof (Leipzig)",
+        "locationConfidence": 0.71659184,
+        "calibratedProbability": 0.6170958
+      }, {
+        "latitudeE7": 513437414,
+        "longitudeE7": 123805310,
+        "placeId": "ChIJ8bSeYiL4pkcRDYsuVPgKgps",
+        "address": "04109 Leipzig, Deutschland",
+        "name": "Hauptbahnhof",
+        "locationConfidence": 0.49543828,
+        "calibratedProbability": 0.4266486
+      }],
+      "editConfirmationStatus": "NOT_CONFIRMED",
+      "simplifiedRawPath": {
+        "points": [{
+          "latE7": 513456778,
+          "lngE7": 123804215,
+          "accuracyMeters": 42,
+          "timestamp": "2022-08-02T07:58:57.142Z"
+        }, {
+          "latE7": 513449869,
+          "lngE7": 123799268,
+          "accuracyMeters": 23,
+          "timestamp": "2022-08-02T08:04:07.709Z"
+        }],
+        "source": "INFERRED",
+        "distanceMeters": 84.15824087384443
+      },
+      "locationConfidence": 75,
+      "placeVisitType": "SINGLE_PLACE",
+      "placeVisitImportance": "TRANSITIONAL"
+    }
+  }]
+}
