@@ -1,7 +1,30 @@
+---
+title:  Data Preprocessing
+author: Dimitri Leandro
+date:   March, 2023
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 3
+    number_sections: true
+    code_folding: show
+---
+
+# Getting started
+
+## Imports
+
+```{r message=FALSE, warning=FALSE}
 library(jsonlite)
 library(stringr)
 library(purrr)
+```
 
+## Functions definitions
+
+```{r}
 getDefinedActivityDataFrame <- function(
     df,
     activity,
@@ -26,15 +49,21 @@ getDefinedActivityDataFrame <- function(
   
   return(df_activity)
 }
+```
 
+# Preprocessing
+
+```{r}
 # reading simple subsample json
 df <- as.data.frame(
   fromJSON(
-    txt = 'dataset/raw/simple_subsample.json',
+    txt = '../dataset/raw/simple_subsample.json',
     flatten = TRUE
   )
 )
+```
 
+```{r}
 # getting only cycling samples and its columns
 df_cycling <- getDefinedActivityDataFrame(df, 'CYCLING')
 
@@ -48,5 +77,4 @@ df_train <- getDefinedActivityDataFrame(df, 'IN_TRAIN')
 df_bus <- getDefinedActivityDataFrame(df, 'IN_BUS')
 
 colnames(df_bus)
-
-
+```
