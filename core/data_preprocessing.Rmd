@@ -27,7 +27,7 @@ library(lubridate)
 ## Functions definitions
 
 ```{r}
-getDefinedActivityDataFrame <- function(
+getActivityDataFrame <- function(
     df,
     activity,
     columnsPrefix = 'timelineObjects.activitySegment.'
@@ -53,7 +53,60 @@ getDefinedActivityDataFrame <- function(
 }
 ```
 
+```{r}
+processActivityColumns <- function(
+    df_activity, 
+    column_mappings
+){
+  # renaming and selecting columns based on collection  
+  df_activity <- df_activity %>%
+    rename(column_mappings) %>%
+    select(all_of(names(column_mappings)))
+
+  # converting start timestamp to berlin timezone
+  df_activity$startTimestamp <- as.POSIXct(
+    x      = df_activity$startTimestamp,
+    format = '%FT%T',
+    tz     = 'Europe/Berlin'
+  ) + hours(2)
+  
+  # converting end timestamp to berlin timezone
+  df_activity$endTimestamp <- as.POSIXct(
+    x      = df_activity$endTimestamp,
+    format = '%FT%T',
+    tz     = 'Europe/Berlin'
+  ) + hours(2)
+  
+  # converting meters to kilometers
+  df_activity$kilometers <- df_activity$kilometers/1000
+  
+  # duration of activity in hours
+  df_activity$hours <- as.numeric(
+    difftime(
+      df_activity$endTimestamp,
+      df_activity$startTimestamp,
+      units = 'hours'
+    )
+  )
+  
+  # speed in km/h
+  df_activity$speed <- df_activity$kilometers / df_activity$hours
+  
+  # categorical start timestamp
+  df_activity$startTimeCategorical <- cut(
+    x              = hour(df_activity$startTimestamp), 
+    breaks         = hour(hm('00:00', '06:00', '12:00', '18:00', '23:59')), 
+    labels         = c('Night', 'Morning', 'Afternoon', 'Evening'), 
+    include.lowest = TRUE
+  )
+  
+  return(df_activity)
+}
+```
+
 # Understanding the data structure
+
+## Activity Segment 
 
 ```{r}
 # reading simple subsample json
@@ -63,14 +116,6 @@ df <- as.data.frame(
     flatten = TRUE
   )
 )
-```
-
-## Cycling
-
-```{r}
-# getting only cycling samples and its columns
-df_cycling <- getDefinedActivityDataFrame(df, 'CYCLING')
-# colnames(df_cycling)
 
 # mapping new names to the columns I'd like to keep
 column_mappings <- c(
@@ -79,71 +124,32 @@ column_mappings <- c(
   'endTimestamp'   = 'duration.endTimestamp',
   'kilometers'     = 'waypointPath.distanceMeters'
 )
-
-df_cycling <- df_cycling %>%
-  rename(column_mappings) %>%
-  select(all_of(names(column_mappings)))
-
-df_cycling %>% head()
 ```
 
+### Cycling
+
 ```{r}
+# getting only cycling samples and its columns
+df_cycling <- getActivityDataFrame(df, 'CYCLING')
 
-df_cycling$startTimestamp <- as.POSIXct(
-  x      = df_cycling$startTimestamp,
-  format = '%FT%T',
-  tz     = 'Europe/Berlin'
-) + hours(2)
+# formatting columns
+df_cycling <- processActivityColumns(df_cycling, column_mappings)
 
-df_cycling$endTimestamp <- as.POSIXct(
-  x      = df_cycling$endTimestamp,
-  format = '%FT%T',
-  tz     = 'Europe/Berlin'
-) + hours(2)
-
-df_cycling %>% head()
+# how it looks like
+head(df_cycling)
 ```
 
-```{r}
-df_cycling$kilometers <- df_cycling$kilometers/1000
-df_cycling %>% head()
-```
+### Walking
 
 ```{r}
-df_cycling$hours <- as.numeric(
-  difftime(
-    df_cycling$endTimestamp,
-    df_cycling$startTimestamp,
-    units = 'hours'
-  )
-)
+# getting only walking samples and its columns
+df_walking <- getActivityDataFrame(df, 'WALKING')
 
-df_cycling$speed <- df_cycling$kilometers / df_cycling$hours 
+# formatting columns
+df_walking <- processActivityColumns(df_walking, column_mappings)
 
-df_cycling %>% head()
-```
-
-```{r}
-df_cycling$startTimeCategorical <- cut(
-  x              = hour(df_cycling$startTimestamp), 
-  breaks         = hour(hm('00:00', '06:00', '12:00', '18:00', '23:59')), 
-  labels         = c('Night', 'Morning', 'Afternoon', 'Evening'), 
-  include.lowest = TRUE
-)
-
-df_cycling %>% head()
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
+# how it looks like
+head(df_walking)
 ```
 
 ```{r}
@@ -168,10 +174,6 @@ write.csv(
   file      = '../dataset/test.csv', 
   row.names = FALSE
 )
-```
-
-```{r}
-?write.csv
 ```
 
 ```{r}
