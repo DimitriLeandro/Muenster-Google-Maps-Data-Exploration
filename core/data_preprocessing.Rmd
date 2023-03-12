@@ -16,12 +16,14 @@ output:
 
 ## Imports
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 library(jsonlite)
 library(stringr)
 library(purrr)
 library(dplyr)
 library(lubridate)
+
+Sys.setlocale('LC_TIME', 'C')
 ```
 
 ## Functions definitions
@@ -92,13 +94,22 @@ processActivityColumns <- function(
   # speed in km/h
   df_activity$speed <- df_activity$kilometers / df_activity$hours
   
-  # categorical start timestamp
-  df_activity$startTimeCategorical <- cut(
+  # categorical start timestamp: time of the day
+  df_activity$timeOfDay <- cut(
     x              = hour(df_activity$startTimestamp), 
     breaks         = hour(hm('00:00', '06:00', '12:00', '18:00', '23:59')), 
     labels         = c('Night', 'Morning', 'Afternoon', 'Evening'), 
     include.lowest = TRUE
   )
+  
+  # day of week
+  df_activity$weekday <- weekdays(df_activity$startTimestamp)
+  
+  # week of year
+  df_activity$weekOfYear <- week(df_activity$startTimestamp)
+  
+  # month
+  df_activity$month <- months(df_activity$startTimestamp)
   
   return(df_activity)
 }
@@ -106,7 +117,7 @@ processActivityColumns <- function(
 
 # Understanding the data structure
 
-## Activity Segment 
+## Activity Segment
 
 ```{r}
 # reading simple subsample json
@@ -116,14 +127,6 @@ df <- as.data.frame(
     flatten = TRUE
   )
 )
-
-# mapping new names to the columns I'd like to keep
-column_mappings <- c(
-  'activityType'   = 'activityType',
-  'startTimestamp' = 'duration.startTimestamp',
-  'endTimestamp'   = 'duration.endTimestamp',
-  'kilometers'     = 'waypointPath.distanceMeters'
-)
 ```
 
 ### Cycling
@@ -132,10 +135,23 @@ column_mappings <- c(
 # getting only cycling samples and its columns
 df_cycling <- getActivityDataFrame(df, 'CYCLING')
 
-# formatting columns
-df_cycling <- processActivityColumns(df_cycling, column_mappings)
+# how the raw data looks like
+head(df_cycling)
+```
 
-# how it looks like
+```{r warning=FALSE}
+# mapping new names to the columns I'd like to keep
+cycling_column_mappings <- c(
+  'activityType'   = 'activityType',
+  'startTimestamp' = 'duration.startTimestamp',
+  'endTimestamp'   = 'duration.endTimestamp',
+  'kilometers'     = 'waypointPath.distanceMeters'
+)
+
+# formatting columns
+df_cycling <- processActivityColumns(df_cycling, cycling_column_mappings)
+
+# how it looks like now
 head(df_cycling)
 ```
 
@@ -145,69 +161,78 @@ head(df_cycling)
 # getting only walking samples and its columns
 df_walking <- getActivityDataFrame(df, 'WALKING')
 
-# formatting columns
-df_walking <- processActivityColumns(df_walking, column_mappings)
-
-# how it looks like
+# how the raw data looks like
 head(df_walking)
 ```
 
 ```{r}
+# mapping new names to the columns I'd like to keep
+walking_column_mappings <- cycling_column_mappings
 
+# formatting columns
+df_walking <- processActivityColumns(df_walking, walking_column_mappings)
+
+# how it looks like now
+head(df_walking)
+```
+
+### In Train
+
+```{r}
+# getting only train samples and its columns
+df_train <- getActivityDataFrame(df, 'IN_TRAIN')
+
+# how the raw data looks like
+head(df_train)
 ```
 
 ```{r}
+# mapping new names to the columns I'd like to keep
+train_column_mappings <- c(
+  'activityType'   = 'activityType',
+  'startTimestamp' = 'duration.startTimestamp',
+  'endTimestamp'   = 'duration.endTimestamp',
+  'kilometers'     = 'transitPath.distanceMeters'
+)
 
+# formatting columns
+df_train <- processActivityColumns(df_train, train_column_mappings)
+
+# how it looks like now
+head(df_train)
+```
+
+### In Bus
+
+```{r}
+# getting only bus samples and its columns
+df_bus <- getActivityDataFrame(df, 'IN_BUS')
+
+# how the raw data looks like
+head(df_bus)
 ```
 
 ```{r}
+# mapping new names to the columns I'd like to keep
+bus_column_mappings <- train_column_mappings
 
+# formatting columns
+df_bus <- processActivityColumns(df_bus, bus_column_mappings)
+
+# how it looks like now
+head(df_bus)
 ```
 
-```{r}
-
-```
+### Writing CSV
 
 ```{r}
 write.csv(
-  x         = df_cycling, 
-  file      = '../dataset/test.csv', 
+  x         = rbind(df_cycling, df_walking, df_train, df_bus), 
+  file      = '../dataset/activities/simple_subsample_activities.csv', 
   row.names = FALSE
 )
 ```
 
-```{r}
+## Place Visit
 
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-# getting only cycling samples and its columns
-df_cycling <- getDefinedActivityDataFrame(df, 'CYCLING')
-
-# getting only walking samples and its columns
-df_walking <- getDefinedActivityDataFrame(df, 'WALKING')
-
-# getting only in_train samples and its columns
-df_train <- getDefinedActivityDataFrame(df, 'IN_TRAIN')
-
-# getting only in_bus samples and its columns
-df_bus <- getDefinedActivityDataFrame(df, 'IN_BUS')
-
-colnames(df_bus)
-```
+## Gathering latitude and longitude information
