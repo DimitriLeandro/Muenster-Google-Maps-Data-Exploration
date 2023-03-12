@@ -16,7 +16,7 @@ output:
 
 ## Imports
 
-```{r message=FALSE, warning=FALSE, include=FALSE}
+```{r message=FALSE, warning=FALSE}
 library(jsonlite)
 library(stringr)
 library(purrr)
@@ -32,6 +32,7 @@ Sys.setlocale('LC_TIME', 'C')
 getActivityDataFrame <- function(
     df,
     activity,
+    remove_na     = TRUE,
     columnsPrefix = 'timelineObjects.activitySegment.'
 ){
   # getting rows where activity
@@ -41,9 +42,11 @@ getActivityDataFrame <- function(
   ]
   
   # removing columns where all rows are null or na
-  df_activity <- df_activity[
-    colSums(is.na(df_activity) | df_activity=='NULL') != nrow(df_activity)
-  ]
+  if(remove_na){
+    df_activity <- df_activity[
+      colSums(is.na(df_activity) | df_activity=='NULL') != nrow(df_activity)
+    ]
+  }
   
   # renaming columns by removing prefix
   colnames(df_activity) <- map(
@@ -60,10 +63,16 @@ processActivityColumns <- function(
     df_activity, 
     column_mappings
 ){
+  # keeping less accurate distance for coalesce purposes
+  simple_distance <- df_activity$distance
+  
   # renaming and selecting columns based on collection  
   df_activity <- df_activity %>%
     rename(column_mappings) %>%
     select(all_of(names(column_mappings)))
+  
+  # trying to keep accurate distance (better less accurate than null)
+  df_activity$kilometers <- coalesce(df_activity$kilometers, simple_distance)
 
   # converting start timestamp to berlin timezone
   df_activity$startTimestamp <- as.POSIXct(
@@ -112,6 +121,40 @@ processActivityColumns <- function(
   df_activity$month <- months(df_activity$startTimestamp)
   
   return(df_activity)
+}
+```
+
+```{r}
+getMonthActivityData <- function(dataset_path){
+  # reading month raw data
+  df <- as.data.frame(
+    fromJSON(
+      txt = dataset_path,
+      flatten = TRUE
+    )
+  )
+  
+  # gathering preprocessed activity information
+  month_activity_df <- rbind(
+    processActivityColumns(
+      getActivityDataFrame(df, 'CYCLING', FALSE), 
+      cycling_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, 'WALKING', FALSE), 
+      walking_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, 'IN_TRAIN', FALSE), 
+      train_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, 'IN_BUS', FALSE), 
+      bus_column_mappings
+    )
+  )
+  
+  return(month_activity_df)
 }
 ```
 
@@ -223,13 +266,34 @@ df_bus <- processActivityColumns(df_bus, bus_column_mappings)
 head(df_bus)
 ```
 
-### Writing CSV
+### Writing CSVs
 
 ```{r}
+# writing the simple subsample result
 write.csv(
   x         = rbind(df_cycling, df_walking, df_train, df_bus), 
   file      = '../dataset/activities/simple_subsample_activities.csv', 
   row.names = FALSE
+)
+```
+
+```{r}
+# removing the previous variables for memory usage purposes
+rm(df, df_cycling, df_walking, df_train, df_bus)
+```
+
+```{r}
+# processing the actual data
+write.csv(
+  file      = '../dataset/activities/activities.csv', 
+  row.names = FALSE,
+  x         = rbind(
+    getMonthActivityData('../dataset/raw/2022_APRIL.json'),
+    getMonthActivityData('../dataset/raw/2022_MAY.json'),
+    getMonthActivityData('../dataset/raw/2022_JUNE.json'),
+    getMonthActivityData('../dataset/raw/2022_JULY.json'),
+    getMonthActivityData('../dataset/raw/2022_AUGUST.json')
+  )
 )
 ```
 

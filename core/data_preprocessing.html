@@ -1607,6 +1607,14 @@ div.tocify {
 <h1><span class="header-section-number">1</span> Getting started</h1>
 <div id="imports" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Imports</h2>
+<pre class="r"><code>library(jsonlite)
+library(stringr)
+library(purrr)
+library(dplyr)
+library(lubridate)
+
+Sys.setlocale(&#39;LC_TIME&#39;, &#39;C&#39;)</code></pre>
+<pre><code>## [1] &quot;C&quot;</code></pre>
 </div>
 <div id="functions-definitions" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Functions
@@ -1614,6 +1622,7 @@ definitions</h2>
 <pre class="r"><code>getActivityDataFrame &lt;- function(
     df,
     activity,
+    remove_na     = TRUE,
     columnsPrefix = &#39;timelineObjects.activitySegment.&#39;
 ){
   # getting rows where activity
@@ -1623,9 +1632,11 @@ definitions</h2>
   ]
   
   # removing columns where all rows are null or na
-  df_activity &lt;- df_activity[
-    colSums(is.na(df_activity) | df_activity==&#39;NULL&#39;) != nrow(df_activity)
-  ]
+  if(remove_na){
+    df_activity &lt;- df_activity[
+      colSums(is.na(df_activity) | df_activity==&#39;NULL&#39;) != nrow(df_activity)
+    ]
+  }
   
   # renaming columns by removing prefix
   colnames(df_activity) &lt;- map(
@@ -1639,10 +1650,16 @@ definitions</h2>
     df_activity, 
     column_mappings
 ){
+  # keeping less accurate distance for coalesce purposes
+  simple_distance &lt;- df_activity$distance
+  
   # renaming and selecting columns based on collection  
   df_activity &lt;- df_activity %&gt;%
     rename(column_mappings) %&gt;%
     select(all_of(names(column_mappings)))
+  
+  # trying to keep accurate distance (better less accurate than null)
+  df_activity$kilometers &lt;- coalesce(df_activity$kilometers, simple_distance)
 
   # converting start timestamp to berlin timezone
   df_activity$startTimestamp &lt;- as.POSIXct(
@@ -1691,6 +1708,37 @@ definitions</h2>
   df_activity$month &lt;- months(df_activity$startTimestamp)
   
   return(df_activity)
+}</code></pre>
+<pre class="r"><code>getMonthActivityData &lt;- function(dataset_path){
+  # reading month raw data
+  df &lt;- as.data.frame(
+    fromJSON(
+      txt = dataset_path,
+      flatten = TRUE
+    )
+  )
+  
+  # gathering preprocessed activity information
+  month_activity_df &lt;- rbind(
+    processActivityColumns(
+      getActivityDataFrame(df, &#39;CYCLING&#39;, FALSE), 
+      cycling_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, &#39;WALKING&#39;, FALSE), 
+      walking_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, &#39;IN_TRAIN&#39;, FALSE), 
+      train_column_mappings
+    ),
+    processActivityColumns(
+      getActivityDataFrame(df, &#39;IN_BUS&#39;, FALSE), 
+      bus_column_mappings
+    )
+  )
+  
+  return(month_activity_df)
 }</code></pre>
 </div>
 </div>
@@ -1859,12 +1907,12 @@ df_walking &lt;- processActivityColumns(df_walking, walking_column_mappings)
 head(df_walking)</code></pre>
 <pre><code>##    activityType      startTimestamp        endTimestamp kilometers      hours
 ## 6       WALKING 2022-06-01 15:15:41 2022-06-01 15:19:48 0.43157197 0.06861111
-## 8       WALKING 2022-08-02 09:54:05 2022-08-02 09:58:57         NA 0.08111111
+## 8       WALKING 2022-08-02 09:54:05 2022-08-02 09:58:57 0.25700000 0.08111111
 ## 12      WALKING 2022-05-23 16:40:37 2022-05-23 16:43:44 0.21589431 0.05194444
 ## 17      WALKING 2022-05-18 11:52:00 2022-05-18 11:54:44 0.06313297 0.04555556
 ##       speed timeOfDay   weekday weekOfYear  month
 ## 6  6.290118 Afternoon Wednesday         22   June
-## 8        NA   Morning   Tuesday         31 August
+## 8  3.168493   Morning   Tuesday         31 August
 ## 12 4.156254 Afternoon    Monday         21    May
 ## 17 1.385846   Morning Wednesday         20    May</code></pre>
 </div>
@@ -2011,18 +2059,33 @@ head(df_bus)</code></pre>
 <pre><code>##    activityType      startTimestamp        endTimestamp kilometers     hours
 ## 5        IN_BUS 2022-06-01 14:42:41 2022-06-01 15:15:41      3.391 0.5500000
 ## 13       IN_BUS 2022-05-10 19:30:40 2022-05-10 19:40:46      1.958 0.1683333
-## 14       IN_BUS 2022-05-28 15:43:32 2022-05-28 15:52:41         NA 0.1525000
+## 14       IN_BUS 2022-05-28 15:43:32 2022-05-28 15:52:41      3.487 0.1525000
 ##        speed timeOfDay   weekday weekOfYear month
 ## 5   6.165455 Afternoon Wednesday         22  June
 ## 13 11.631683   Evening   Tuesday         19   May
-## 14        NA Afternoon  Saturday         22   May</code></pre>
+## 14 22.865574 Afternoon  Saturday         22   May</code></pre>
 </div>
-<div id="writing-csv" class="section level3" number="2.1.5">
-<h3><span class="header-section-number">2.1.5</span> Writing CSV</h3>
-<pre class="r"><code>write.csv(
+<div id="writing-csvs" class="section level3" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Writing CSVs</h3>
+<pre class="r"><code># writing the simple subsample result
+write.csv(
   x         = rbind(df_cycling, df_walking, df_train, df_bus), 
   file      = &#39;../dataset/activities/simple_subsample_activities.csv&#39;, 
   row.names = FALSE
+)</code></pre>
+<pre class="r"><code># removing the previous variables for memory usage purposes
+rm(df, df_cycling, df_walking, df_train, df_bus)</code></pre>
+<pre class="r"><code># processing the actual data
+write.csv(
+  file      = &#39;../dataset/activities/activities.csv&#39;, 
+  row.names = FALSE,
+  x         = rbind(
+    getMonthActivityData(&#39;../dataset/raw/2022_APRIL.json&#39;),
+    getMonthActivityData(&#39;../dataset/raw/2022_MAY.json&#39;),
+    getMonthActivityData(&#39;../dataset/raw/2022_JUNE.json&#39;),
+    getMonthActivityData(&#39;../dataset/raw/2022_JULY.json&#39;),
+    getMonthActivityData(&#39;../dataset/raw/2022_AUGUST.json&#39;)
+  )
 )</code></pre>
 </div>
 </div>
