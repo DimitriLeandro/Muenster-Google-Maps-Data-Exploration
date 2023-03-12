@@ -1,0 +1,29 @@
+---
+title:  Activities Data Exploration
+author: Dimitri Leandro
+date:   March, 2023
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 3
+    number_sections: true
+    code_folding: show
+---
+
+```{r}
+df <- as.data.frame(read.csv('../dataset/activities/activities.csv'))
+```
+
+```{r}
+sum(df[df$activityType == 'CYCLING', 'kilometers'])
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
